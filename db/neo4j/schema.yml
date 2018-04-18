@@ -14,7 +14,18 @@
 :constraints:
 - CONSTRAINT ON ( `neo4j::migrations::schemamigration`:`Neo4j::Migrations::SchemaMigration`
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
+- CONSTRAINT ON ( product:Product ) ASSERT product.uuid IS UNIQUE
 - CONSTRAINT ON ( raw:Raw ) ASSERT raw.uuid IS UNIQUE
-:indexes: []
+- CONSTRAINT ON ( rawinventory:RawInventory ) ASSERT rawinventory.uuid IS UNIQUE
+- CONSTRAINT ON ( receipt:Receipt ) ASSERT receipt.uuid IS UNIQUE
+- CONSTRAINT ON ( receiptmaterial:ReceiptMaterial ) ASSERT receiptmaterial.uuid IS
+  UNIQUE
+:indexes:
+- INDEX ON :Raw(type)
 :versions:
 - '20180416225250'
+- '20180416235712'
+- '20180418202642'
+- '20180418203137'
+- '20180418204248'
+- '20180418204731'
