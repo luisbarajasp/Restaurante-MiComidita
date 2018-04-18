@@ -1,0 +1,27 @@
+<%= form_with(model: raw_inventory, local: true) do |form| %>
+  <% if raw_inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(raw_inventory.errors.count, "error") %> prohibited this raw_inventory from being saved:</h2>
+
+      <ul>
+      <% raw_inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity, id: :raw_inventory_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expired_at %>
+    <%= form.datetime_select :expired_at, id: :raw_inventory_expired_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

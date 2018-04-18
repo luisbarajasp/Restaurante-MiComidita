@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Raw Inventories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Expired at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_inventories.each do |raw_inventory| %>
+      <tr>
+        <td><%= raw_inventory.quantity %></td>
+        <td><%= raw_inventory.expired_at %></td>
+        <td><%= link_to 'Show', raw_inventory %></td>
+        <td><%= link_to 'Edit', edit_raw_inventory_path(raw_inventory) %></td>
+        <td><%= link_to 'Destroy', raw_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raw Inventory', new_raw_inventory_path %>
