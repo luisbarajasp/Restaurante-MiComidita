@@ -8,7 +8,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <%= render "layouts/navbar" %>
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Navbar</li>
+        </ol>
+        <%= yield %>
+      </div>
+    </div>
+    <%= render "layouts/footer" %>
+    
   </body>
 </html>

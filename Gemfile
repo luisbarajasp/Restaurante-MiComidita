@@ -22,6 +22,12 @@ gem 'sprockets-rails', '~> 3.2'
 gem 'jquery-rails'
 # Bootstrap for rails
 gem 'bootstrap', '~> 4.1'
+# font awesome
+gem "font-awesome-rails"
+# Normalize styles for cross-browser
+gem 'normalize-rails', '~> 4.1', '>= 4.1.1'
+# Chart js
+gem 'chart-js-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

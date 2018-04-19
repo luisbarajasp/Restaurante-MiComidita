@@ -15,4 +15,12 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require Chart.min
 //= require_tree .
+
+var ready = function() {
+    
+};
+
+$(document).on('ready', ready);
+$(document).on('turbolinks:load', ready);

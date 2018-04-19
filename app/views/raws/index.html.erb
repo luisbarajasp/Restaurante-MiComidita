@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<!-- <h1>Raws</h1> -->
-<nav class="navbar fixed-top navbar-dark" style="background-color: #b54747;">
-  <span class="navbar-brand mb-0 h1">Raws</span>
-</nav>
-<br>
+<h1>Raws</h1> 
 <table class="table table- table-hover">
   <thead>
     <tr>
@@ -13,7 +9,6 @@
       <th>Quantity</th>
       <th>Measure</th>
       <th>Cost</th>
-      <th>Expired at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,7 +20,6 @@
         <td><%= raw.quantity %></td>
         <td><%= raw.measure %></td>
         <td><%= raw.cost %></td>
-        <td><%= raw.expired_at %></td>
         <td><%= link_to 'Show', raw %></td>
         <td><%= link_to 'Edit', edit_raw_path(raw) %></td>
         <td><%= link_to 'Destroy', raw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
