@@ -1,4 +1,4 @@
-(function($) {
+var ready = (function($) {
   "use strict"; // Start of use strict
   // Configure tooltips for collapsed side navigation
   $('.navbar-sidenav [data-toggle="tooltip"]').tooltip({
@@ -43,3 +43,6 @@
     event.preventDefault();
   });
 })(jQuery); // End of use strict
+
+jQuery(document).on('ready', ready);
+jQuery(document).on('turbolinks:load', ready);

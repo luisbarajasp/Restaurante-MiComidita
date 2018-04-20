@@ -1,24 +1,30 @@
 class RawsController < ApplicationController
   before_action :set_raw, only: [:show, :edit, :update, :destroy]
+  add_breadcrumb "Raws", :raws_path
 
   # GET /raws
   # GET /raws.json
   def index
     @raws = Raw.all
+    
   end
 
   # GET /raws/1
   # GET /raws/1.json
   def show
+    add_breadcrumb "#{params[:id]}", :raw_path   
   end
+  
 
   # GET /raws/new
   def new
+    add_breadcrumb "New", :new_raw_path     
     @raw = Raw.new
   end
 
   # GET /raws/1/edit
   def edit
+    add_breadcrumb "#{params[:id]}", :edit_raw_path            
   end
 
   # POST /raws
