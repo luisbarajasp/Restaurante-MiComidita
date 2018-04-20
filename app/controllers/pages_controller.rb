@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def dashboard
+  def dashboard    
   end
 
   def not_found
