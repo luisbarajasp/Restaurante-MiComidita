@@ -19,7 +19,21 @@
 //= require_tree .
 
 var ready = function() {
-    
+    // Raws inventories    
+    $('.see_inventories').on('click', function(e){
+        $(this).addClass('has-showed');            
+        $(this).toggleClass('showing');
+        if($(this).hasClass('showing')){
+            if($(this).hasClass('has-showed')){
+                $('.inventories').show();  
+                e.preventDefault();              
+            }
+            $(this).find('p').html('Hide inventories <i class="fa fa-chevron-down" aria-hidden="true"></i>');            
+        }else{
+            $('.inventories').hide();            
+            $(this).find('p').html('See inventories <i class="fa fa-chevron-right" aria-hidden="true"></i>');            
+        }
+    });
 };
 
 $(document).on('ready', ready);

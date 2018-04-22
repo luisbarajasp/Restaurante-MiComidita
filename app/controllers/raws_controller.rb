@@ -6,7 +6,6 @@ class RawsController < ApplicationController
   # GET /raws.json
   def index
     @raws = Raw.all
-    
   end
 
   # GET /raws/1
@@ -65,6 +64,11 @@ class RawsController < ApplicationController
       format.html { redirect_to raws_url, notice: 'Raw was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def get_raw_inventories
+    @raw = Raw.find(params[:id])
+    @raw_inventories = @raw.raw_inventories
   end
 
   private
