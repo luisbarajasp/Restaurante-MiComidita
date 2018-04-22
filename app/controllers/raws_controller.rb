@@ -12,7 +12,7 @@ class RawsController < ApplicationController
   # GET /raws/1
   # GET /raws/1.json
   def show
-    add_breadcrumb "#{params[:id]}", :raw_path   
+    add_breadcrumb "#{@raw.name}", :raw_path   
   end
   
 
@@ -24,7 +24,7 @@ class RawsController < ApplicationController
 
   # GET /raws/1/edit
   def edit
-    add_breadcrumb "#{params[:id]}", :edit_raw_path            
+    add_breadcrumb "#{@raw.name}", :edit_raw_path            
   end
 
   # POST /raws

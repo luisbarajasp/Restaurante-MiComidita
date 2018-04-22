@@ -7,5 +7,5 @@ class RawInventory
 
   # Relations
   has_one :out, :raw, type: :raw
-  has_many :in, :receipt_materials, origin: :raw_inventory
+  has_many :in, :receipt_materials, origin: :raw_inventories
 end

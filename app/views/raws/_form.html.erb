@@ -18,12 +18,7 @@
 
   <div class="field">
     <%= form.label :type %>
-    <%= form.number_field :type, id: :raw_type, :class => 'form-control', :placeholder => 'Intoduce the type' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity, id: :raw_quantity, :class => 'form-control', :placeholder => 'Introduce the quantity' %>
+    <%= form.text_field :type, id: :raw_type, :class => 'form-control', :placeholder => 'Intoduce the type' %>
   </div>
 
   <div class="field">
@@ -34,21 +29,6 @@
   <div class="field">
     <%= form.label :cost %>
     <%= form.text_field :cost, id: :raw_cost %>
-  </div>
-
-  <div class="field">
-    <%= form.label :created_at %>
-    <%= form.datetime_select :created_at, id: :raw_created_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :updated_at %>
-    <%= form.datetime_select :updated_at, id: :raw_updated_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :expired_at %>
-    <%= form.datetime_select :expired_at, id: :raw_expired_at %>
   </div>
 
   <div class="actions">

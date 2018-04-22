@@ -6,24 +6,32 @@
     <tr>
       <th>Name</th>
       <th>Type</th>
-      <th>Quantity</th>
       <th>Measure</th>
       <th>Cost</th>
-      <th colspan="3"></th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @raws.each do |raw| %>
-      <tr>
-        <td><%= raw.name %></td>
-        <td><%= raw.type %></td>
-        <td><%= raw.quantity %></td>
-        <td><%= raw.measure %></td>
-        <td><%= raw.cost %></td>
-        <td><%= link_to 'Show', raw %></td>
-        <td><%= link_to 'Edit', edit_raw_path(raw) %></td>
-        <td><%= link_to 'Destroy', raw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= raw.name %></td>
+          <td><%= raw.type %></td>
+          <td><%= raw.measure %></td>
+          <td><%= raw.cost %></td>
+          <td>
+            <%= link_to 'Show', raw %>
+          </td>
+          <td>
+            <%= link_to edit_raw_path(raw) do%>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to raw, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>              
+            <% end %>
+          </td>
+        </tr>
     <% end %>
   </tbody>
 </table>
