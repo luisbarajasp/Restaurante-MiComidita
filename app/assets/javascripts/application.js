@@ -25,12 +25,12 @@ var ready = function() {
         $(this).toggleClass('showing');
         if($(this).hasClass('showing')){
             if($(this).hasClass('has-showed')){
-                $('.inventories').show();  
+                $(this).closest('.card').find('.inventories').show();  
                 e.preventDefault();              
             }
             $(this).find('p').html('Hide inventories <i class="fa fa-chevron-down" aria-hidden="true"></i>');            
         }else{
-            $('.inventories').hide();            
+            $(this).closest('.card').find('.inventories').hide();            
             $(this).find('p').html('See inventories <i class="fa fa-chevron-right" aria-hidden="true"></i>');            
         }
     });

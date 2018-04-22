@@ -18,19 +18,18 @@ class RawsController < ApplicationController
   # GET /raws/new
   def new
     add_breadcrumb "New", :new_raw_path     
-    @raw = Raw.new
+    @raw = Raw.new(raw_inventories: [RawInventory.new])
   end
 
   # GET /raws/1/edit
   def edit
-    add_breadcrumb "#{@raw.name}", :edit_raw_path            
+    add_breadcrumb "#{@raw.name}", :edit_raw_path     
   end
 
   # POST /raws
   # POST /raws.json
   def create
     @raw = Raw.new(raw_params)
-
     respond_to do |format|
       if @raw.save
         format.html { redirect_to @raw, notice: 'Raw was successfully created.' }
@@ -47,6 +46,7 @@ class RawsController < ApplicationController
   def update
     respond_to do |format|
       if @raw.update(raw_params)
+        @raw.raw_inventories.build
         format.html { redirect_to @raw, notice: 'Raw was successfully updated.' }
         format.json { render :show, status: :ok, location: @raw }
       else
@@ -59,6 +59,7 @@ class RawsController < ApplicationController
   # DELETE /raws/1
   # DELETE /raws/1.json
   def destroy
+    @raw.raw_inventories.destroy
     @raw.destroy
     respond_to do |format|
       format.html { redirect_to raws_url, notice: 'Raw was successfully destroyed.' }
@@ -79,6 +80,6 @@ class RawsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def raw_params
-      params.require(:raw).permit(:name, :type, :quantity, :measure, :cost, :created_at, :updated_at, :expired_at)
+      params.require(:raw).permit(:name, :type, :measure, :cost, raw_inventories_attributes: [ :quantity, :expired_at, :_destroy ])
     end
 end

@@ -1,4 +1,7 @@
 <ul class="list-group list-group-flush">
+    <% if @raw_inventories.length < 1%>
+        <li class="list-group-item">No stock</li>
+    <% end %>
     <% @raw_inventories.each do |inventory| %>
         <li class="list-group-item">
                 <%= pluralize( "%g" % inventory.quantity, @raw.measure ) %> |

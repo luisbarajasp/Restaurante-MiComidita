@@ -31,6 +31,20 @@
     <%= form.text_field :cost, id: :raw_cost %>
   </div>
 
+  <h2>Inventories</h2>
+  <%= form.fields_for :raw_inventories do |inventory| %>
+    <div class="raw_inventory_fields">
+      <div class="field">
+        <%= inventory.label :quantity %><br>
+        <%= inventory.number_field :quantity %>
+      </div>
+      <div class="field">
+        <%= inventory.label :expired_at %><br>
+        <%= inventory.date_field :expired_at %>
+      </div>
+    </div>
+ <% end %>
+
   <div class="actions">
     <%= form.submit "Guardar", :class => "btn btn-success" %>
   </div>
