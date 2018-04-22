@@ -34,6 +34,21 @@ var ready = function() {
             $(this).find('p').html('See inventories <i class="fa fa-chevron-right" aria-hidden="true"></i>');            
         }
     });
+
+    // Nested forms
+    $('form').on('click', '.remove', function(event) {
+        $(this).prev('.destroy').val('1');
+        $(this).closest('tr').hide();
+        return event.preventDefault();
+    });
+
+    $('form').on('click', '.add_fields', function(event) {
+        var regexp, time;
+        time = new Date().getTime();
+        regexp = new RegExp($(this).data('id'), 'g');
+        $('.fields').append($(this).data('fields').replace(regexp, time));
+        return event.preventDefault();
+    });
 };
 
 $(document).on('ready', ready);

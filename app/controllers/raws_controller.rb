@@ -46,7 +46,6 @@ class RawsController < ApplicationController
   def update
     respond_to do |format|
       if @raw.update(raw_params)
-        @raw.raw_inventories.build
         format.html { redirect_to @raw, notice: 'Raw was successfully updated.' }
         format.json { render :show, status: :ok, location: @raw }
       else
@@ -59,7 +58,7 @@ class RawsController < ApplicationController
   # DELETE /raws/1
   # DELETE /raws/1.json
   def destroy
-    @raw.raw_inventories.destroy
+    @raw.raw_inventories.map {|i| i.destroy}
     @raw.destroy
     respond_to do |format|
       format.html { redirect_to raws_url, notice: 'Raw was successfully destroyed.' }
@@ -80,6 +79,6 @@ class RawsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def raw_params
-      params.require(:raw).permit(:name, :type, :measure, :cost, raw_inventories_attributes: [ :quantity, :expired_at, :_destroy ])
+      params.require(:raw).permit(:id, :name, :type, :measure, :cost, raw_inventories_attributes: [ :id, :quantity, :expired_at, :_destroy ])
     end
 end

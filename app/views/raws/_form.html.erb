@@ -32,18 +32,20 @@
   </div>
 
   <h2>Inventories</h2>
-  <%= form.fields_for :raw_inventories do |inventory| %>
-    <div class="raw_inventory_fields">
-      <div class="field">
-        <%= inventory.label :quantity %><br>
-        <%= inventory.number_field :quantity %>
-      </div>
-      <div class="field">
-        <%= inventory.label :expired_at %><br>
-        <%= inventory.date_field :expired_at %>
-      </div>
-    </div>
- <% end %>
+  <table class="table">
+    <thead>
+      <th>Quantity</th>
+      <th>Expire at</th>
+      <th></th>
+    </thead>
+    <tbody class="fields">
+      <%= form.fields_for :raw_inventories do |inventory| %>
+        <%= render 'form_raw_inventory', f: inventory%>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to_add_row('Add inventory', form, :raw_inventories, class: 'btn btn-primary') %>
 
   <div class="actions">
     <%= form.submit "Guardar", :class => "btn btn-success" %>
