@@ -2,14 +2,12 @@
 
 one:
   name: MyString
-  cost: 1.5
   quantity: 1.5
-  expired_at: 2018-04-18 15:31:37
   measure: MyString
+  cost: 1.5
 
 two:
   name: MyString
-  cost: 1.5
   quantity: 1.5
-  expired_at: 2018-04-18 15:31:37
   measure: MyString
+  cost: 1.5

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :recipes
   get 'dashboard', action: :dashboard, controller: 'pages'
 
   get '404', action: :not_found, controller: 'pages'

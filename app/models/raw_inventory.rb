@@ -6,13 +6,13 @@ class RawInventory
   before_save :check_expiring
 
   property :quantity, type: Float
+  property :quantity_left, type: Float  
   property :expired_at, type: Date
   property :expired, type: Boolean, default: false
 
   # Relations
   has_one :out, :raw, type: :raw
   has_one :out, :raw_expired, type: :raw_expired, model_class: :Raw, unique: true
-  has_many :out, :receipt_materials, origin: :raw_inventories
 
   def check_expiring
     if self.expired_at < Date.today
