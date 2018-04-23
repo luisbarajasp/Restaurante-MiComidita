@@ -4,9 +4,8 @@
     <% end %>
     <% @raw_inventories.each do |inventory| %>
         <li class="list-group-item">
-                <%= pluralize( "%g" % inventory.quantity, @raw.measure ) %> |
-                <%= inventory.expired_at.to_time.strftime('%m/%d/%Y') %>                    
-            </div>
+            <%= pluralize( "%g" % inventory.quantity, @raw.measure ) %> |
+            <%= inventory.expired_at.to_time.strftime('%m/%d/%Y') %>               
         </li>
     <% end %>
 </ul>

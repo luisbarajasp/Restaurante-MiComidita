@@ -1,6 +1,7 @@
 class Raw
   include Neo4j::ActiveNode
   include Neo4j::Timestamps # will give model created_at and updated_at timestamp
+  include Neo4j::ActiveBase # Get a new Query object
 
   property :name, type: String
   enum type: [:fresh, :meat, :dairy, :frozen, :cereal, :miscellaneous, :others]
@@ -9,6 +10,18 @@ class Raw
 
   # Relations
   has_many :in, :raw_inventories, origin: :raw
+  has_many :in, :expired_inventories, origin: :raw_expired, model_class: :RawInventory
+  
+
+  # Returns RawInventories
+  def good_inventories 
+    self.raw_inventories(:r).where("r.expired = false OR r.expired IS NULL")
+  end
+
+  # Returns relations to RawInventories
+  # def good_inventories 
+  #   self.raw_inventories(:r, :rel).where("r.expired = false OR r.expired IS NULL").pluck(:rel)   
+  # end
   
   # Nested raw_inventories
   # include ActiveModel::Model

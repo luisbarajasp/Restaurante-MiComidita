@@ -6,6 +6,6 @@ class ReceiptMaterial
 
   # Relations
   has_one :out, :receipt, type: :receipt
-  has_many :out, :raw_inventories, type: :inventory
+  has_many :in, :raw_inventories, type: :inventory
 
 end

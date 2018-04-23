@@ -50,10 +50,10 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Neo4j DB connection
-  config.neo4j.session_type = :http
-  config.neo4j.session_path = 'http://'
-  config.neo4j.session_path << ENV["DB_USERNAME"]
-  config.neo4j.session_path << ':'
-  config.neo4j.session_path << ENV["DB_PASSWORD"]
-  config.neo4j.session_path << '@localhost:7474'
+  config.neo4j.session.type = :http
+  config.neo4j.session.path = 'http://'
+  config.neo4j.session.path << ENV["DB_USERNAME"]
+  config.neo4j.session.path << ':'
+  config.neo4j.session.path << ENV["DB_PASSWORD"]
+  config.neo4j.session.path << '@localhost:7474'
 end
