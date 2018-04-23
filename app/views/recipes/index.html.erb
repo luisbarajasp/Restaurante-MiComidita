@@ -5,21 +5,26 @@
   <div class="container-fluid">
     <div class="row">
       <% @recipes.each do |recipe| %>
-          <div class="card col-sm-4" id="<%= recipe.id %>" style="padding:0;">
+          <div class="card col-sm-12" id="<%= recipe.id %>" style="padding:0;">
             <div class="card-body">
-              <h5 class="card-title"><%= recipe.name %></h5>
-              <h6 class="card-subtitle mb-2 text-muted"><%= recipe.type %></h6>
+              <div class="card-top row">
+                <h5 class="card-title col-sm"><%= recipe.name %></h5>              
+                <div class="actions col-sm">
+                  <%= link_to edit_recipe_path(recipe), class: 'card-link' do%>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <% end %>
+                  <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' do %>
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>              
+                  <% end %>
+                </div>
+              </div>
+              <h6 class="card-subtitle mb-2 text-muted"><%= "%g" % recipe.quantity %> <%= recipe.measure %></h6>
               <p class="card-text">Cost: <%= "%g" % recipe.cost %></p>
-              <%# <%= link_to raw_inventories_path(recipe), remote: true, class: 'see_inventories' do %> 
-                <%# <p>See inventories <i class="fa fa-chevron-right" aria-hidden="true"></i></p> %>
-              <%# <% end %> 
-              <div class="raws"></div>
-              <%= link_to edit_recipe_path(recipe), class: 'card-link' do%>
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <%= link_to recipe_materials_path(recipe), remote: true, class: 'see_materials' do %>
+                <p>See recipe materials <i class="fa fa-chevron-right" aria-hidden="true"></i></p>
               <% end %>
-              <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' do %>
-                <i class="fa fa-trash-o" aria-hidden="true"></i>              
-              <% end %>
+              <div class="materials"></div>
+              
             </div>
           </div>
         <% end %>

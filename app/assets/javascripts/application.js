@@ -35,6 +35,22 @@ var ready = function() {
         }
     });
 
+    // Raws materials in recipes    
+    $('.see_materials').on('click', function(e){
+        $(this).addClass('has-showed');            
+        $(this).toggleClass('showing');
+        if($(this).hasClass('showing')){
+            if($(this).hasClass('has-showed')){
+                $(this).closest('.card').find('.materials').show();  
+                e.preventDefault();              
+            }
+            $(this).find('p').html('Hide recipe materials <i class="fa fa-chevron-down" aria-hidden="true"></i>');            
+        }else{
+            $(this).closest('.card').find('.materials').hide();            
+            $(this).find('p').html('See recipe materials <i class="fa fa-chevron-right" aria-hidden="true"></i>');            
+        }
+    });
+
     // Nested forms
     $('form').on('click', '.remove', function(event) {
         $(this).prev('.destroy').val('1');

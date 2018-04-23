@@ -18,6 +18,7 @@
 - CONSTRAINT ON ( raw:Raw ) ASSERT raw.uuid IS UNIQUE
 - CONSTRAINT ON ( rawinventory:RawInventory ) ASSERT rawinventory.uuid IS UNIQUE
 - CONSTRAINT ON ( recipe:Recipe ) ASSERT recipe.uuid IS UNIQUE
+- CONSTRAINT ON ( recipematerial:RecipeMaterial ) ASSERT recipematerial.uuid IS UNIQUE
 :indexes:
 - INDEX ON :Raw(type)
 :versions:
@@ -26,3 +27,4 @@
 - '20180418202642'
 - '20180418204248'
 - '20180423212821'
+- '20180423224744'

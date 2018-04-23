@@ -14,11 +14,13 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
+    @raws = Raw.all
     @recipe = Recipe.new
   end
 
   # GET /recipes/1/edit
   def edit
+    @raws = Raw.all
   end
 
   # POST /recipes
@@ -61,6 +63,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def get_recipe_materials
+    @recipe = Recipe.find(params[:id])
+    @materials = @recipe.recipe_materials    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
@@ -69,6 +76,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :quantity, :measure, :cost)
+      params.require(:recipe).permit(:name, :quantity, :measure, recipe_materials_attributes: [ :id, :raw_id, :quantity, :_destroy ])
     end
 end

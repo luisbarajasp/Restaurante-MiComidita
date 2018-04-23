@@ -7,7 +7,21 @@
     <%= f.input :name %>
     <%= f.input :quantity %>
     <%= f.input :measure %>
-    <%= f.input :cost %>
+    <h2>Raw Materials</h2>
+    <table class="table">
+      <thead>
+        <th>Raw</th>
+        <th>Quantity</th>
+        <th></th>
+      </thead>
+      <tbody class="fields">
+        <%= f.simple_fields_for :recipe_materials do |material| %>
+          <%= render 'form_recipe_material', f: material%>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to_add_row('Add recipe material', f, :recipe_materials, class: 'btn btn-primary') %>
   </div>
 
   <div class="form-actions">
