@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  add_breadcrumb "Recipes", :recipes_path
 
   # GET /recipes
   # GET /recipes.json
@@ -10,17 +11,20 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+      add_breadcrumb "#{@recipe.name}", :recipe_path
   end
 
   # GET /recipes/new
   def new
-    @raws = Raw.all
-    @recipe = Recipe.new
+      add_breadcrumb "New", :new_recipe_path
+      @raws = Raw.all
+      @recipe = Recipe.new
   end
 
   # GET /recipes/1/edit
   def edit
-    @raws = Raw.all
+      add_breadcrumb "#{@recipe.name}", :edit_recipe_path
+      @raws = Raw.all
   end
 
   # POST /recipes
@@ -65,7 +69,7 @@ class RecipesController < ApplicationController
 
   def get_recipe_materials
     @recipe = Recipe.find(params[:id])
-    @materials = @recipe.recipe_materials    
+    @materials = @recipe.recipe_materials
   end
 
   private

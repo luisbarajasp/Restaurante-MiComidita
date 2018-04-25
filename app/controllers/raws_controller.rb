@@ -11,19 +11,18 @@ class RawsController < ApplicationController
   # GET /raws/1
   # GET /raws/1.json
   def show
-    add_breadcrumb "#{@raw.name}", :raw_path   
+    add_breadcrumb "#{@raw.name}", :raw_path
   end
-  
 
   # GET /raws/new
   def new
-    add_breadcrumb "New", :new_raw_path     
+    add_breadcrumb "New", :new_raw_path
     @raw = Raw.new(raw_inventories: [RawInventory.new])
   end
 
   # GET /raws/1/edit
   def edit
-    add_breadcrumb "#{@raw.name}", :edit_raw_path     
+    add_breadcrumb "#{@raw.name}", :edit_raw_path
   end
 
   # POST /raws
