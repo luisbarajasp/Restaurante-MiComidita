@@ -1,12 +1,11 @@
 # Proyecto Bases de Datos Avanzadas
 ## **Aplicación Web: Restaurante " Mi Comidita "**
-##### *Luis Barajas Pérez - A01370934*
-##### *Mauricio Rico Zavala - A01370874*
+##### *Luis Barajas Pérez - A01370934 y Mauricio Rico Zavala - A01370874*
+###### 09 - 05 - 18
 ---
 #### Manual de Instalación:
 #### Manual de Usuario:
 #### Descripción trabajo realizado:
-
 
 
 <!-- ###### Database
