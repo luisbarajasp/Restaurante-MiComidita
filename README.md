@@ -3,9 +3,9 @@
 ##### *Luis Barajas Pérez - A01370934 y Mauricio Rico Zavala - A01370874*
 ###### 09 - 05 - 18
 ---
-#### Manual de Instalación:
-#### Manual de Usuario:
-#### Descripción trabajo realizado:
+### Manual de Instalación:
+### Manual de Usuario:
+### Descripción trabajo realizado:
 
 
 <!-- ###### Database
