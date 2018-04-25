@@ -14,10 +14,10 @@ class Recipe
   def recipe_materials_attributes=(attributes)
     @recipe_materials ||= []
     attributes.each do |i, material_params|
-      if material_params["_destroy"] == '1'
+      if material_params["_destroy"] == '1' && !material_params["id"].nil?
         # Delete relation
         RecipeMaterial.find(material_params["id"]).destroy
-      else
+      elsif material_params["_destroy"] == '0'
         material_params.delete "_destroy" 
         # puts material_params
         if material_params["id"].nil?

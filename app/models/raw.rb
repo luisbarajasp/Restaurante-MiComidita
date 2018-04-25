@@ -30,10 +30,10 @@ class Raw
   def raw_inventories_attributes=(attributes)
     @raw_inventories ||= []
     attributes.each do |i, inventory_params|
-      if inventory_params["_destroy"] == '1'
+      if inventory_params["_destroy"] == '1' && !inventory_params["id"].nil?
         # Delete record
         RawInventory.find(inventory_params["id"]).destroy
-      else
+      elsif inventory_params["_destroy"] == '0'
         inventory_params.delete "_destroy" 
         puts inventory_params
         if inventory_params["id"].nil?
