@@ -4,13 +4,13 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :quantity %>
-    <%= f.input :measure %>
+    <%= f.input :name, placeholder: 'Type in the name for the recipe' %>
+    <%= f.input :quantity, placeholder: 'Type in the total amount of recipe' %>
+    <%= f.input :measure, placeholder: 'E.g. kg, g, mg, etc' %>
     <h2>Raw Materials</h2>
     <table class="table">
       <thead>
-        <th>Raw</th>
+        <th>Raw Material</th>
         <th>Quantity</th>
         <th></th>
       </thead>
