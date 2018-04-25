@@ -3,7 +3,9 @@ class Recipe
   property :name, type: String
   property :quantity, type: Float
   property :measure, type: String
-  property :cost, type: Float
+  property :cost, type: Float, default: 0.0
+
+  after_create :add_materials_cost
 
   # Relations
   has_many :in, :recipe_materials, origin: :recipe   
@@ -27,14 +29,23 @@ class Recipe
           material.raw = raw
 
           self.recipe_materials << material
-
-          self.cost += material.quantity * raw.cost
         else
           # Update relation
           RecipeMaterial.find(material_params["id"]).update(quantity: material_params["quantity"])
         end
       end
     end
+  end
+
+
+  private
+
+  def add_materials_cost
+    value = self.cost
+    self.recipe_materials.each do |m| 
+      value += (m.quantity * m.raw.cost)
+    end
+    self.update cost: value
   end
 
 end
