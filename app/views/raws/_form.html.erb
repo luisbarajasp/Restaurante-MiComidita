@@ -4,7 +4,7 @@
 
   <div class="form-inputs">
     <%= f.input :name, placeholder: 'Type in name of the raw product' %>
-    <%= f.input :type, placeholder: 'Type in type of the raw product' %>
+    <%= f.input :type, prompt: "Select the type", collection: [['Fresh Product','fresh'],['Meat Product','meat'],['Dairy Product','dairy'],['Frozen Product','frozen'],['Cereal Product','cereal'],['Miscellaneous Product','miscellaneous'],['Other type Product','others']] %>
     <%= f.input :measure, placeholder: 'E.g. kg, g, mg, etc', hint: 'Measure unit (e.g. kg, g, mg)' %>
     <%= f.input :cost, hint: 'Cost per measure unit' %>
     <h2>Inventories</h2>

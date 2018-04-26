@@ -17,7 +17,7 @@
               </div>
               <h6 class="card-subtitle mb-2 text-muted"><%= "%g" % product.recipe.quantity %> <%= product.recipe.measure %></h6>
               <p class="card-text">
-              Cost: <%= "%g" % product.recipe.cost %> <br>
+              Cost: <%= number_to_currency("%g" % product.recipe.cost) %> <br>
               Expire in <%= pluralize((product.expired_at - Date.today).to_i, 'day') %> 
               </p>
               <%= link_to recipe_materials_path(product.recipe), remote: true, class: 'see_materials' do %>
