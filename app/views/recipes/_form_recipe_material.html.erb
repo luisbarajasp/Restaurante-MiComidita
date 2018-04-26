@@ -1,5 +1,5 @@
 <tr>
-    <td><%= f.input :raw_id, collection: @raws, :value_method => :id, label: false %></td>
+    <td><%= f.input :raw_id, collection: @raws, :value_method => :id, label: false, :readonly => true %></td>
     <td><%= f.number_field :quantity %></td>
     <td>
         <%= f.hidden_field :_destroy, value: '0', class: 'destroy' %>

@@ -1,28 +1,25 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :destroy]
   add_breadcrumb "Products", :products_path
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    # @products = Product.all
+    @products = Product.as(:p).where("p.expired_at > #{Date.today}")
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-       add_breadcrumb "#{@product.name}", :product_path
+       add_breadcrumb "#{@product.recipe.name}", :product_path
   end
 
   # GET /products/new
   def new
       add_breadcrumb "New", :new_product_path
       @product = Product.new
-  end
-
-  # GET /products/1/edit
-  def edit
-       add_breadcrumb "#{@product.name}", :edit_product_path
+      @recipes = Recipe.all
   end
 
   # POST /products
@@ -36,20 +33,6 @@ class ProductsController < ApplicationController
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
-  def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -73,6 +56,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.fetch(:product, {})
+      params.require(:product).permit(:id, :expired_at, :recipe_id)
     end
 end

@@ -15,8 +15,8 @@ class Raw
   
 
   # Returns RawInventories
-  def good_inventories 
-    self.raw_inventories(:r).where("r.expired = false OR r.expired IS NULL")
+  def inventories_asc
+    self.raw_inventories.as(:r).where("r.quantity_left > 0").order("r.expired_at ASC")
   end
 
   # Returns relations to RawInventories

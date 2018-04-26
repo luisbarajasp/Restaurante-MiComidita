@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '404', action: :not_found, controller: 'pages'
 
-  resources :products
+  resources :products, except: [:edit, :update]
   resources :receipts
   resources :raws
 

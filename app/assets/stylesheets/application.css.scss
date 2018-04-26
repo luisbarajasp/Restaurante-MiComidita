@@ -15,6 +15,14 @@
  *= require font-awesome
  */
 
+.card{
+    .card-top{
+        .col-sm:nth-child(2){
+            text-align: right;
+        }
+    }
+}
+
 @import "bootstrap";
 @import "dashboard/sb-admin.scss";
 @import "pages.scss";
