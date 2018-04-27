@@ -1,6 +1,6 @@
-// var ready = function() {
-//     $('#dataTable').DataTable();    
-// };
+var ready = function() {
+    $('#dataTable').DataTable();    
+};
 
-// $(document).on('ready', ready);
-// $(document).on('turbolinks:load', ready);
+$(document).on('ready', ready);
+$(document).on('turbolinks:load', ready);

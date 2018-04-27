@@ -16,6 +16,8 @@
 //= require popper
 //= require bootstrap
 //= require Chart.min
+//= require dashboard/jquery.dataTables
+//= require dashboard/dataTables.bootstrap4
 //= require_tree .
 
 var ready = function() {
