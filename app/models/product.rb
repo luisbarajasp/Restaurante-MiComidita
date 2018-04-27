@@ -4,30 +4,61 @@ class Product
 
   property :expired_at, type: Date
 
-  before_validation :validates_inventories
+  validate :validates_inventories
+  before_create :create_product
 
   # Relations
   has_one :out, :recipe, type: :has_recipe
   has_many :out, :raw_inventories, type: :has_inventory
 
+  private
   def validates_inventories
     self.recipe.recipe_materials.each do |material|
       remaining = material.quantity
       material.raw.inventories_asc.each do |inventory|
         left = inventory.quantity_left - remaining
-        if left > -1 
+        if left > 0 
+          # There is more than enough to fulfill
+          remaining = 0
+          break
+        elsif left == 0
+          # There is exactly enough to fulfill
+          remaining = 0
+          break
+        else 
+          # There is less thna enough to fulfill
+          remaining = -left
+        end
+      end
+      if remaining > 0
+        errors.add(:base, "You do not have enough inventory of #{material.raw.name} for this recipe")
+      end
+    end
+  end
+
+  def create_product
+    self.recipe.recipe_materials.each do |material|
+      remaining = material.quantity
+      material.raw.inventories_asc.each do |inventory|
+        left = inventory.quantity_left - remaining
+        if left > 0 
+          # There is more than enough to fulfill
+          self.raw_inventories << inventory
+          inventory.update quantity_left: left
+          remaining = 0
+          break
+        elsif left == 0
+          # There is exactly enough to fulfill
           self.raw_inventories << inventory
           inventory.update quantity_left: left
           remaining = 0
           break
         else 
+          # There is less thna enough to fulfill
           self.raw_inventories << inventory
           inventory.update quantity_left: 0
           remaining = -left
         end
-      end
-      if remaining > 0
-        errors.add(:recipe, ": has no enough materials")
       end
     end
   end
