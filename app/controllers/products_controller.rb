@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     # @products = Product.all
-    @products = Product.as(:p).where("p.expired_at > #{Date.today}")
+    @products = Product.as(:p).where("p.expired_at > #{Date.today.strftime('%s')}")
   end
 
   # GET /products/1

@@ -9,7 +9,7 @@ class Raw
   property :cost, type: Float, default: 0.0
 
   # Relations
-  has_many :in, :raw_inventories, origin: :raw
+  has_many :in, :raw_inventories, origin: :raw, dependent: :destroy
   has_many :in, :expired_inventories, origin: :raw_expired, model_class: :RawInventory
   has_many :in, :used_inventories, origin: :raw_used, model_class: :RawInventory
   

@@ -58,8 +58,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    chart-js-rails (0.1.4)
-      railties (> 3.1)
+    chartjs-ror (3.6.2)
+      rails (>= 3.1)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -232,7 +232,7 @@ DEPENDENCIES
   breadcrumbs_on_rails
   byebug
   capybara (~> 2.13)
-  chart-js-rails
+  chartjs-ror
   coffee-rails (~> 4.2)
   figaro (~> 1.1, >= 1.1.1)
   font-awesome-rails

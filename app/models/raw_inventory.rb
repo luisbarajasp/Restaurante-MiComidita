@@ -18,9 +18,8 @@ class RawInventory
   has_one :out, :raw_expired, type: :raw_expired, model_class: :Raw, unique: true
   has_one :out, :raw_used, type: :raw_used, model_class: :Raw, unique: true
   
-  has_many :in, :products, origin: :raw_inventory, unique: true   
+  has_many :in, :products, origin: :raw_inventory, unique: true  
 
-  private
   def check_expiring
     if self.expired_at < Date.today && !self.expired
       self.expired = true
@@ -29,6 +28,8 @@ class RawInventory
     end
   end
 
+  private
+  
   def set_quantity_left
     self.quantity_left = self.quantity
   end

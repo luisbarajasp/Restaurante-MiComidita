@@ -27,7 +27,7 @@ gem "font-awesome-rails"
 # Normalize styles for cross-browser
 gem 'normalize-rails', '~> 4.1', '>= 4.1.1'
 # Chart js
-gem 'chart-js-rails'
+gem 'chartjs-ror'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

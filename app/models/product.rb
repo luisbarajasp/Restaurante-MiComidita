@@ -3,13 +3,21 @@ class Product
   include Neo4j::Timestamps # will give model created_at and updated_at timestamp
 
   property :expired_at, type: Date
-
+  property :expired, type: Boolean, default: false  
+  
   validate :validates_inventories
   before_create :create_product
+  before_save :check_expiring
 
   # Relations
   has_one :out, :recipe, type: :has_recipe
   has_many :out, :raw_inventories, type: :has_inventory
+
+  def check_expiring
+    if self.expired_at < Date.today && !self.expired
+      self.expired = true
+    end
+  end
 
   private
   def validates_inventories

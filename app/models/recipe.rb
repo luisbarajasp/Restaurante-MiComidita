@@ -8,7 +8,16 @@ class Recipe
   after_create :add_materials_cost
 
   # Relations
-  has_many :in, :recipe_materials, origin: :recipe   
+  has_many :in, :recipe_materials, origin: :recipe, dependent: :destroy
+  has_many :in, :products, origin: :recipe, dependent: :destroy  
+
+  def available_products
+    available_products = []
+    self.products.each do |p|
+      p.expired == false ? available_products << p : next
+    end
+    available_products
+  end
 
   # Nested raw_materials
   def recipe_materials_attributes=(attributes)
