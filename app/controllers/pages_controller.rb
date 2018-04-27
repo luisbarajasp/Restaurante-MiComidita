@@ -53,7 +53,7 @@ class PagesController < ApplicationController
         yAxes: [{
           ticks: {
             min: 0,
-            max: costs_products.max + 10,
+            max: costs_products.max != nil ? costs_products.max + 10 : 0,
             maxTicksLimit: 5
           },
           gridLines: {
@@ -112,7 +112,7 @@ class PagesController < ApplicationController
         yAxes: [{
           ticks: {
             min: 0,
-            max: costs_raws.max + 1000,
+            max: costs_raws.max != nil ? costs_raws.max + 1000 : 0,
             maxTicksLimit: 5
           },
           gridLines: {

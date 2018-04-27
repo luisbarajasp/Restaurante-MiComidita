@@ -16,7 +16,9 @@
       </thead>
       <tbody class="fields">
         <%= f.simple_fields_for :raw_inventories do |inventory| %>
-          <%= render 'form_raw_inventory', f: inventory%>
+          <% if inventory.object.expired == false && inventory.object.quantity_left > 0 %>
+            <%= render 'form_raw_inventory', f: inventory%>
+          <% end %>
         <% end %>
       </tbody>
     </table>

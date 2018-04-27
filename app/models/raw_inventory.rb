@@ -5,8 +5,14 @@ class RawInventory
 
   before_create :set_quantity_left
   validate :update_quantity_left, on: :update
+
+  scope :active, -> { where(expired: false).where("result_raw_inventories.quantity_left > 0")}
+  scope :expired, -> { where(expired: true) }
+  scope :used, -> { where("result_raw_inventories.quantity_left > 0") }
   
-  before_save :check_expiring, :check_quantity_left
+  # Ex:- scope :active, -> {where(:active => true)}
+  
+  before_save :check_expiring
 
   property :quantity, type: Float
   property :quantity_left, type: Float
@@ -15,16 +21,12 @@ class RawInventory
 
   # Relations
   has_one :out, :raw, type: :raw
-  has_one :out, :raw_expired, type: :raw_expired, model_class: :Raw, unique: true
-  has_one :out, :raw_used, type: :raw_used, model_class: :Raw, unique: true
   
   has_many :in, :products, origin: :raw_inventory, unique: true  
 
   def check_expiring
     if self.expired_at < Date.today && !self.expired
       self.expired = true
-      self.raw.expired_inventories << self
-      self.query_as(:r).match("(r)-[rel: raw]->(ra: Raw)").delete(:rel).first
     end
   end
 
@@ -41,12 +43,5 @@ class RawInventory
       errors.add(:quantity, " invalid value") 
     end
     self.quantity_left = value
-  end
-
-  def check_quantity_left
-    if self.quantity_left == 0
-      self.raw.used_inventories << self
-      self.query_as(:r).match("(r)-[rel: raw]->(ra: Raw)").delete(:rel).first
-    end
   end
 end

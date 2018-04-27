@@ -67,7 +67,7 @@ class RawsController < ApplicationController
 
   def get_raw_inventories
     @raw = Raw.find(params[:id])
-    @raw_inventories = @raw.raw_inventories
+    @raw_inventories = @raw.raw_inventories.active
   end
 
   private

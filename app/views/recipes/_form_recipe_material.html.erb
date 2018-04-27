@@ -1,6 +1,6 @@
 <tr>
     <% if f.object.new_record? %>
-        <td><%= f.input :raw_id, collection: @raws, :value_method => :id, label: false %></td>
+        <td><%= f.input :raw_id, collection: @raws, prompt: "Select the raw", :value_method => :id, label: false %></td>
     <% else %>
         <td><%= f.object.raw.name %></td>
     <% end %>
