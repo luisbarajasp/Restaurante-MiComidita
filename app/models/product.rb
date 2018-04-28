@@ -9,6 +9,9 @@ class Product
   before_create :create_product
   before_save :check_expiring
 
+  scope :available, -> { where(:expired => false)}
+  # Ex:- scope :active, -> {where(:active => true)}
+
   # Relations
   has_one :out, :recipe, type: :has_recipe
   has_many :out, :raw_inventories, type: :has_inventory

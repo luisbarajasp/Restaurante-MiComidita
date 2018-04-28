@@ -31,8 +31,8 @@ class RawsController < ApplicationController
     @raw = Raw.new(raw_params)
     respond_to do |format|
       if @raw.save
-        format.html { redirect_to @raw, notice: 'Raw was successfully created.' }
-        format.json { render :show, status: :created, location: @raw }
+        format.html { redirect_to raws_url, notice: 'Raw was successfully created.' }
+        format.json { render :show, status: :created, location: raws_url }
       else
         format.html { render :new }
         format.json { render json: @raw.errors, status: :unprocessable_entity }
@@ -45,8 +45,8 @@ class RawsController < ApplicationController
   def update
     respond_to do |format|
       if @raw.update(raw_params)
-        format.html { redirect_to @raw, notice: 'Raw was successfully updated.' }
-        format.json { render :show, status: :ok, location: @raw }
+        format.html { redirect_to raws_url, notice: 'Raw was successfully updated.' }
+        format.json { render :show, status: :ok, location: raws_url }
       else
         format.html { render :edit }
         format.json { render json: @raw.errors, status: :unprocessable_entity }

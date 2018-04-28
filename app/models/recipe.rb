@@ -5,19 +5,23 @@ class Recipe
   property :measure, type: String
   property :cost, type: Float, default: 0.0
 
-  after_create :add_materials_cost
+  # before_create :add_materials_cost
+  before_validation :add_materials_cost, on: :create
+
+  # scope :available_products, :products -> { where(:expired => false)}
+  # Ex:- scope :active, -> {where(:active => true)}
 
   # Relations
   has_many :in, :recipe_materials, origin: :recipe, dependent: :destroy
   has_many :in, :products, origin: :recipe, dependent: :destroy  
 
-  def available_products
-    available_products = []
-    self.products.each do |p|
-      p.expired == false ? available_products << p : next
-    end
-    available_products
-  end
+  # def available_products
+  #   available_products = []
+  #   self.products.each do |p|
+  #     p.expired == false ? available_products << p : next
+  #   end
+  #   available_products
+  # end
 
   # Nested raw_materials
   def recipe_materials_attributes=(attributes)
@@ -37,6 +41,12 @@ class Recipe
           raw = Raw.find(material_params["raw_id"])
           material.raw = raw
 
+          if !self.cost.nil?
+            value = self.cost
+            value += (material.quantity * material.raw.cost)
+            self.update cost: value
+          end
+
           self.recipe_materials << material
         else
           # Update relation
@@ -50,11 +60,11 @@ class Recipe
   private
 
   def add_materials_cost
-    value = self.cost
+    value = 0.0
     self.recipe_materials.each do |m| 
       value += (m.quantity * m.raw.cost)
     end
-    self.update cost: value
+    self.cost = value
   end
 
 end

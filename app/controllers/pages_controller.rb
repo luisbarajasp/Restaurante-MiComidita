@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     costs_products = []
     Neo4j::ActiveBase.current_session.query("MATCH (p: Product{expired: true})-[h: has_recipe]->(r: Recipe) WITH p, r, p.expired_at as date RETURN SUM(r.cost) AS cost_per_month, date ORDER BY date ASC LIMIT 6").each do |month|
       dates_products << Time.at(month.date).strftime("%B %y")
-      costs_products << month.cost_per_month
+      costs_products << (month.cost_per_month).round(2)
     end
 
     @total_lost_products = Neo4j::ActiveBase.current_session.query("MATCH (p: Product{expired: true})-[h: has_recipe]->(r: Recipe) WITH p, r, p.expired_at as date RETURN SUM(r.cost) as total").first.total    
@@ -72,7 +72,7 @@ class PagesController < ApplicationController
     costs_raws = []
     Neo4j::ActiveBase.current_session.query("MATCH (r: RawInventory{expired: true})-[rel: raw_expired]->(ra: Raw) WITH r, ra, r.expired_at as date RETURN SUM(r.quantity * ra.cost) AS cost_per_month, date ORDER BY date ASC LIMIT 6").each do |month|
       dates_raws << Time.at(month.date).strftime("%B %y")
-      costs_raws << month.cost_per_month
+      costs_raws << (month.cost_per_month).round(2)
     end
 
     @total_lost_raws = Neo4j::ActiveBase.current_session.query("MATCH (r: RawInventory{expired: true})-[rel: raw_expired]->(ra: Raw) WITH r, ra, r.expired_at as date RETURN SUM(r.quantity * ra.cost) as total").first.total    
@@ -134,7 +134,7 @@ class PagesController < ApplicationController
     @warehouses_data = {
       labels: ["Raw", "Products"],
       datasets: [{
-        data: [raw_warehouse, product_warehouse],
+        data: [(raw_warehouse).round(2), (product_warehouse).round(2)],
         backgroundColor: ['rgb(30,144,255)', 'rgb(100,149,237)'],
       }]
     }

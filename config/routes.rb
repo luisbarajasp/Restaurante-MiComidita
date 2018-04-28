@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  resources :recipes
   get 'dashboard', action: :dashboard, controller: 'pages'
 
   get '404', action: :not_found, controller: 'pages'
 
-  resources :products, except: [:edit, :update]
-  resources :receipts
-  resources :raws
+  resources :products, except: [:show, :edit, :update]
+  resources :recipes, except: [:show]
+  resources :raws, except: [:show]
 
   get 'raws/get_raw_inventories/:id' => 'raws#get_raw_inventories', as: :raw_inventories
   get 'recipes/get_recipe_materials/:id' => 'recipes#get_recipe_materials', as: :recipe_materials

@@ -17,9 +17,6 @@
 - CONSTRAINT ON ( product:Product ) ASSERT product.uuid IS UNIQUE
 - CONSTRAINT ON ( raw:Raw ) ASSERT raw.uuid IS UNIQUE
 - CONSTRAINT ON ( rawinventory:RawInventory ) ASSERT rawinventory.uuid IS UNIQUE
-- CONSTRAINT ON ( receipt:Receipt ) ASSERT receipt.uuid IS UNIQUE
-- CONSTRAINT ON ( receiptmaterial:ReceiptMaterial ) ASSERT receiptmaterial.uuid IS
-  UNIQUE
 - CONSTRAINT ON ( recipe:Recipe ) ASSERT recipe.uuid IS UNIQUE
 - CONSTRAINT ON ( recipematerial:RecipeMaterial ) ASSERT recipematerial.uuid IS UNIQUE
 :indexes:
@@ -28,8 +25,6 @@
 - '20180416225250'
 - '20180416235712'
 - '20180418202642'
-- '20180418203137'
 - '20180418204248'
-- '20180418204731'
 - '20180423212821'
 - '20180423224744'

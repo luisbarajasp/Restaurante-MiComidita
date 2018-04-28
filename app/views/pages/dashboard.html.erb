@@ -174,7 +174,7 @@
                 <td><%= recipe.name %></td>
                 <td><%= pluralize("%g" % recipe.quantity, recipe.measure) %></td>
                 <td><%= number_to_currency(recipe.cost) %></td>
-                <td><%= recipe.available_products.count %></td>
+                <td><%= recipe.products.available.count %></td>
             </tr>
             <% end %>
             </tbody>
