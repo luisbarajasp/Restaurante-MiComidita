@@ -294,7 +294,7 @@ recipe_materials.clear # clear the array
 
 tortillas = Raw.create(name: 'Tortillas', type: 'miscellaneous', measure: 'kilogram', cost: '100')
 RawInventory.create(quantity: 2, expired_at: '2019-10-03', raw: tortillas)
-recipe_materials << RecipeMaterial.create(raw: tortillas, quantity: .025)
+recipe_materials << RecipeMaterial.create(raw: tortillas, quantity: 0.025)
 
 carne_pastor = Raw.create(name: 'Carne al pastor', type: 'meat', measure: 'gram', cost: '440')
 RawInventory.create(quantity: 650, expired_at: '2019-07-06', raw: carne_pastor)
@@ -311,7 +311,7 @@ Product.create(recipe: recipe, expired_at: '2018-12-12')
 ####################### Recipe 19 #######################
 recipe_materials.clear # clear the array
 
-recipe_materials << RecipeMaterial.create(raw: tortillas, quantity: .025)
+recipe_materials << RecipeMaterial.create(raw: tortillas, quantity: 0.025)
 
 recipe_materials << RecipeMaterial.create(raw: salt, quantity: 5)
 
