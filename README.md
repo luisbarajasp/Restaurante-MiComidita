@@ -1,6 +1,6 @@
 # Proyecto Bases de Datos Avanzadas
 ## **Aplicación Web: Restaurante " Mi Comidita "**
-##### *Luis Barajas Pérez - A01370934 , Mauricio Rico Zavala - A01370874 y Daniel Tapia AMATRICULA*
+##### *Luis Barajas Pérez - A01370934 , Mauricio Rico Zavala - A01370874 y Daniel Tapia A01022285*
 ###### 09 - 05 - 18
 ---
 ### Manual de Instalación:
