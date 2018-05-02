@@ -58,7 +58,7 @@
             <div class="card">
                 <div class="list-group list-group-flush small">
                     <% @products.each do |p| %>
-                        <% if (p.expired_at - Date.today).to_i < 6 %>
+                        <% if (p.expired_at - Date.today).to_i < 6 && p.expired_at >= Date.today %>
                             <div class="list-group-item list-group-item-action">
                                 <div class="media">
                                     <div class="media-body">
@@ -83,7 +83,7 @@
                 <div class="list-group list-group-flush small">
                     <% @raws.each do |r| %>
                         <% r.raw_inventories.each do |i| %>
-                            <% if (i.expired_at - Date.today).to_i < 6 %>
+                            <% if (i.expired_at - Date.today).to_i < 6 && i.expired_at >= Date.today%>
                                 <div class="list-group-item list-group-item-action">
                                     <div class="media">
                                         <div class="media-body">
