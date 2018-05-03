@@ -21,4 +21,5 @@
 
 every :day do # Many shortcuts available: :hour, :day, :month, :year, :reboot
     runner "RawInventory.check_expiring"
+    runner "Product.check_expiring"
 end

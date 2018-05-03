@@ -51,7 +51,7 @@ gem "breadcrumbs_on_rails"
 gem 'simple_form'
 
 # Whenever for cron jobs
-gem 'whenever', '~> 0.10.0'
+gem 'whenever', '~> 0.10.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
