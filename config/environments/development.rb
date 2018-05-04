@@ -51,9 +51,9 @@ Rails.application.configure do
 
   # Neo4j DB connection
   config.neo4j.session.type = :http
-  config.neo4j.session.path = 'http://'
-  config.neo4j.session.path << ENV["DB_USERNAME"]
-  config.neo4j.session.path << ':'
-  config.neo4j.session.path << ENV["DB_PASSWORD"]
-  config.neo4j.session.path << '@localhost:7474'
+  config.neo4j.session.path = 'http://neo4j:basesdedatos@neo4j:7474'
+  # config.neo4j.session.path << ENV["DB_USERNAME"]
+  # config.neo4j.session.path << ':'
+  # config.neo4j.session.path << ENV["DB_PASSWORD"]
+  # config.neo4j.session.path << '@localhost:7474'
 end

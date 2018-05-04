@@ -44,7 +44,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Use Figaro for sensitive information
-gem 'figaro', '~> 1.1', '>= 1.1.1'
+# gem 'figaro', '~> 1.1', '>= 1.1.1'
 # Breadcrumbs
 gem "breadcrumbs_on_rails"
 # Simple form
@@ -71,6 +71,6 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
 
 gem 'neo4j', '~> 9.2.0'
