@@ -28,12 +28,12 @@ En la imagen podemos observar nuestro Dashboard, en el cual tenemos la informaci
 
 
 Asi mismo, en este menu principal, podemos realizar nuevos registros, ya sea de:
-<br><br>
+<br>
 
 **Raw**
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Raw.png "Raw")
 
-<br><br>
+<br>
 **Recipe**
 <br>
 
