@@ -17,6 +17,8 @@
 ### Manual de Usuario:
 Una vez completados los pasos de Instalacion, podemos abrir la aplicacion en http://localhost:3000/ y la pantalla que debemos observar es la siguiente:
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Dashboard.png "Dashboard")
+En la imagen podemos observar que en el lado izquierdo contamos con 4 Opciones, las cuales son *Dashboard* (En la cual estamos) *raws*, *Recipes* y *Products*
+
 ### Descripción trabajo realizado:
 
 &nbsp;&nbsp;&nbsp;&nbsp; Para llevar a cabo este proyecto, se le requirió al equipo construir una aplicación web de cualquier tipo en la que se pudiera utilizar la plataforma de bases de datos en forma de grafos de Neo4j. En nuestro equipo decidimos implementar esta herramienta de bases de datos con una aplicación web construida en Ruby on Rails. Poder desarrollar una aplicación en Rails nos permite establecer el back-end de la apliación de una manera más sencilla e integrar la logísitica de Neo4j directamente al app. Es importante considerar que mucho del trabajo que se tiene que hacer para organizar una base de datos de Neo4j es arreglado por el framework de la aplicación entonces la organización entre pantalla e información de la base.
