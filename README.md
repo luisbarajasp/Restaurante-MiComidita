@@ -30,6 +30,15 @@ Asi mismo, en este menu principal, podemos realizar nuevos registros, ya sea de:
 **Product**
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Product.png "Product")
 
+Y cada uno de estos registros esfecifican los elementos que son necesarios para realizar el registro.
+Finalmente, en la pagina principal podemos acceder a cualquiera de las opciones previamente enlistadas y obtener los siguientes resultados:
+![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Raws.png "Raws")
+![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Recipes.png "Recipes")
+![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Products.png "Products")
+
+Es importante recalcar, que cada uno cuenta con la opcion de expandir, para ver mayores detalles, como los ingredientes y cantidades necesarias o bien costos y fechas de expiracion, asi como saber que cada una de estas entradas o registros cuentan con la opcion de editar o bien de ser eliminadas si es necesario
+
+
 
 
 ### Descripción trabajo realizado:
