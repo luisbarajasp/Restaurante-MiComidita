@@ -9,11 +9,11 @@
     - Dirigirse a la terminal, entrar al folder en el cual se desea tener la aplicación y correr el comando:
         - `$ git clone (link)`
 2. Correr en la terminal los siguiente comandos:
-    1. `$ docker-compose up --build`
+     `$ docker-compose up --build`
 3. En otra terminal ejecutamos los siguientes comandos:
-    2. `$ docker-compose run website rails neo4j:migrate`
-    3. `$ docker-compose run website rails neo4j:seed`
-    4. `$ docker-compose run website bundle exec wheneverize`
+    1. `$ docker-compose run website rails neo4j:migrate`
+    2. `$ docker-compose run website rails neo4j:seed`
+    3. `$ docker-compose run website bundle exec wheneverize`
 ### Manual de Usuario:
 Una vez completados los pasos de Instalacion, podemos abrir la aplicacion en http://localhost:3000/ y la pantalla que debemos observar es la siguiente:
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Dashboard.png "Dashboard")
