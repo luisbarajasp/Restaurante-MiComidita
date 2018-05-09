@@ -4,7 +4,7 @@
 ###### 09 - 05 - 18
 ---
 ### Manual de Instalación:
-1. Clonar el repositorio 
+1. Clonar el repositorio
     - Copiar el link de Clone or download
     - Dirigirse a la terminal, entrar al folder en el cual se desea tener la aplicación y correr el comando:
         - `$ git clone (link)`
@@ -16,30 +16,35 @@
     3. `$ docker-compose run website bundle exec wheneverize`
 ### Manual de Usuario:
 Una vez completados los pasos de Instalacion, podemos abrir la aplicacion en http://localhost:3000/ y la pantalla que debemos observar es la siguiente:
+<br>
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Dashboard.png "Dashboard")
+<br>
 En la imagen podemos observar nuestro Dashboard, en el cual tenemos la informacion de nuestro Restaurante, podemos observar, las recetas, los ingredientes,y los productos que vendemos; asi como un par de avisos que nos informan sobre los elementos que estan prontos a expirar, para que tomemos las medidas pertinentes; podemos ver  que en el lado izquierdo contamos con 4 Opciones, las cuales son **Dashboard** (En la cual estamos) **Raws**, **Recipes** y **Products**. Y en la parte inferior podemos observar nuestro inventorio actual,acompañado de un filtro de resultados, asi como realizar una busqueda en caso de ser necesaria. Y si descendemos aun mas, encontramos una serie de graficas que nos permiten evaluar y observar el desempeño de nuestro restaurante.
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Graphs.png "Graphs")
-
+<br>
 Asi mismo, en este menu principal, podemos realizar nuevos registros, ya sea de:
 **Raw**
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Raw.png "Raw")
-
+<br>
 **Recipe**
+<br>
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Recipe.png "Recipe")
-
+<br>
 **Product**
+<br>
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Product.png "Product")
-
+<br>
 Y cada uno de estos registros esfecifican los elementos que son necesarios para realizar el registro.
 Finalmente, en la pagina principal podemos acceder a cualquiera de las opciones previamente enlistadas y obtener los siguientes resultados:
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Raws.png "Raws")
+<br>
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Recipes.png "Recipes")
+<br>
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Products.png "Products")
-
+<br>
 Es importante recalcar, que cada uno cuenta con la opcion de expandir, para ver mayores detalles, como los ingredientes y cantidades necesarias o bien costos y fechas de expiracion, asi como saber que cada una de estas entradas o registros cuentan con la opcion de editar o bien de ser eliminadas si es necesario
 
-
-
+<br>
 
 ### Descripción trabajo realizado:
 
