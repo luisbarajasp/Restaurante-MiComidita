@@ -10,7 +10,7 @@
         - `$ git clone (link)`
 2. Correr en la terminal los siguiente comandos:
     1. `$ docker-compose up --build`
-En otra terminal ejecutamos los siguientes comandos:
+3. En otra terminal ejecutamos los siguientes comandos:
     2. `$ docker-compose run website rails neo4j:migrate`
     3. `$ docker-compose run website rails neo4j:seed`
     4. `$ docker-compose run website bundle exec wheneverize`
