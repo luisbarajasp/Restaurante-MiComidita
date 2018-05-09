@@ -17,8 +17,10 @@
 ### Manual de Usuario:
 Una vez completados los pasos de Instalacion, podemos abrir la aplicacion en http://localhost:3000/ y la pantalla que debemos observar es la siguiente:
 <br>
+
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Dashboard.png "Dashboard")
-<br>
+
+
 En la imagen podemos observar nuestro Dashboard, en el cual tenemos la informacion de nuestro Restaurante, podemos observar, las recetas, los ingredientes,y los productos que vendemos; asi como un par de avisos que nos informan sobre los elementos que estan prontos a expirar, para que tomemos las medidas pertinentes; podemos ver  que en el lado izquierdo contamos con 4 Opciones, las cuales son **Dashboard** (En la cual estamos) **Raws**, **Recipes** y **Products**. Y en la parte inferior podemos observar nuestro inventorio actual,acompañado de un filtro de resultados, asi como realizar una busqueda en caso de ser necesaria. Y si descendemos aun mas, encontramos una serie de graficas que nos permiten evaluar y observar el desempeño de nuestro restaurante.
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Graphs.png "Graphs")
 <br>
