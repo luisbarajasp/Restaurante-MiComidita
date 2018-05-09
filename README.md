@@ -22,13 +22,13 @@ En la imagen podemos observar nuestro Dashboard, en el cual tenemos la informaci
 
 Asi mismo, en este menu principal, podemos realizar nuevos registros, ya sea de:
 **Raw**
-![alt text] (https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Raw.png "Raw")
+![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Raw.png "Raw")
 
 **Recipe**
-![alt text] https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Recipe.png "Recipe")
+![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Recipe.png "Recipe")
 
 **Product**
-![alt text] https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Product.png "Product")
+![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Product.png "Product")
 
 
 
