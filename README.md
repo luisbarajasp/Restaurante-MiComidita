@@ -17,7 +17,7 @@
 ### Manual de Usuario:
 Una vez completados los pasos de Instalacion, podemos abrir la aplicacion en http://localhost:3000/ y la pantalla que debemos observar es la siguiente:
 ![alt text](https://github.com/luisbarajasp/Restaurante-MiComidita/blob/master/img/Dashboard.png "Dashboard")
-En la imagen podemos observar que en el lado izquierdo contamos con 4 Opciones, las cuales son *Dashboard* (En la cual estamos) **Raws, *Recipes* y *Products**
+En la imagen podemos observar que en el lado izquierdo contamos con 4 Opciones, las cuales son **Dashboard** (En la cual estamos) **Raws**, **Recipes** y **Products**
 
 ### Descripción trabajo realizado:
 
